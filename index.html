@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Perfect Bacha ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffc0cb, #dda0dd);
+      color: #333;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .landing {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      animation: fadeIn 2s ease-in-out;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .message {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.2em;
+      line-height: 1.6;
+      background: rgba(255,255,255,0.8);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .lyrics {
+      font-style: italic;
+      color: #e75480;
+      margin: 20px 0;
+      font-weight: 500;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    .final button {
+      background: #e75480;
+      color: white;
+      font-size: 1.3em;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .final button:hover {
+      transform: scale(1.05);
+      background: #d14872;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="section landing">
+    <p id="typing-text"></p>
+  </div>
+
+  <div class="section message">
+    <p>SNEHA,</p>
+    <p>I know I messed up, and I can't stop thinking about how much I hurt you. You're my everything, and seeing you upset breaks my heart.</p>
+    
+    <div class="lyrics">
+      "I found a love, for me<br>
+      Darling, just dive right in and follow my lead"<br>
+    </div>
+    
+    <p>That's how I feel about you. From the moment we met, I knew you were special. You're my perfect match in every way.</p>
+    
+    <div class="lyrics">
+      "Well I found a girl, beautiful and sweet<br>
+      I never knew you were the someone waiting for me"<br>
+    </div>
+    
+    <p>I was blind to not see how my actions would hurt you. Please believe me when I say I'll do anything to make this right.</p>
+    
+    <div class="lyrics">
+      "Baby, I'm dancing in the dark<br>
+      With you between my arms<br>
+      Barefoot on the grass<br>
+      Listening to our favorite song"<br>
+    </div>
+    
+    <p>These are the moments I cherish most with you. Your smile, your laugh, the way you make ordinary days extraordinary.</p>
+    
+    <p>I promise to be better, to love you the way you deserve - completely and without reservation.</p>
+    
+    <p style="font-family: 'Pacifico', cursive; font-size: 1.5em;">Forever yours,<br>Hitesh</p>
+  </div>
+
+  <div class="section gallery">
+    <h2>Our Perfect Moments ❤️</h2>
+    <div class="gallery">
+      <img src="images/firstdate.jpeg" alt="Our first date" onclick="alert('Best day everthing went perfect, ur my lucky charm?')">
+      <img src="images/laughing.jpeg" alt="Laughing together" onclick="alert('You make every moment magical.')">
+      <img src="images/special.jpeg" alt="Special moment" onclick="alert('This moment meant everything.')">
+    </div>
+  </div>
+
+  <div class="section final">
+    <h2>Can We Find Our Way Back to Perfect?</h2>
+    <div class="lyrics">
+      "We're still kids but we're so in love<br>
+      Fighting against all odds<br>
+      I know we'll be alright this time"<br>
+    </div>
+    <button onclick="forgiveMe()">Please Forgive Me</button>
+    <p id="response" style="display:none; margin-top:20px; font-size:1.2em;"></p>
+  </div>
+
+  <script>
+    // Typing animation
+    const text = "Hey Bacha... I'm so sorry ❤️";
+    let i = 0;
+    const typingText = document.getElementById('typing-text');
+    
+    function typeWriter() {
+      if (i < text.length) {
+        typingText.innerHTML = text.substring(0, i+1) + '<span style="border-right: 2px solid; animation: blink 0.7s infinite"></span>';
+        i++;
+        setTimeout(typeWriter, 100);
+      } else {
+        typingText.innerHTML = text;
+      }
+    }
+    
+    function forgiveMe() {
+      document.getElementById('response').style.display = 'block';
+      document.getElementById('response').innerHTML = `
+        <div class="lyrics">"Darling, you look perfect tonight"</div>
+        <p>Thank you. I'll spend every day making sure you know how loved you are.</p>
+      `;
+      document.getElementById('response').scrollIntoView({ behavior: 'smooth' });
+      
+      // Create a few hearts
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.innerHTML = '❤️';
+          heart.style.position = 'fixed';
+          heart.style.left = Math.random() * window.innerWidth + 'px';
+          heart.style.top = Math.random() * window.innerHeight + 'px';
+          heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+          heart.style.animation = 'floatUp 3s ease-in forwards';
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 3000);
+        }, i * 300);
+      }
+    }
+    
+    // Start typing animation when page loads
+    window.onload = typeWriter;
+    
+    // Floating animation
+    document.head.insertAdjacentHTML('beforeend', `
+      <style>
+        @keyframes floatUp {
+          0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+          100% { transform: translateY(-100px) rotate(20deg); opacity: 0; }
+        }
+        @keyframes blink {
+          0% { border-color: transparent; }
+          50% { border-color: #e75480; }
+          100% { border-color: transparent; }
+        }
+      </style>
+    `);
+  </script>
+</body>
+</html>
